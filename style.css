@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Секция 1 */
+.section_1 {
+  position: relative; /* Для позиционирования слоев */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden; /* Чтобы слои не выходили за границы */
+}
+
+.head_content {
+  position: relative;
+  z-index: 2;
+}
+
+.head_title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.head_subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.register {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.register:hover {
+  background-color: #3e8e41;
+  transform: scale(1.05);
+}
+
+/* Стили для слоев */
+.layer {
+  position: absolute;
+}
+
+.layer_back {
+  background: #7cb342;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Под контентом */
+}
+
+.layer_middle {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: #4caf50; /* Полупрозрачные */
+  z-index: 3; /* Над контентом */
+}
+
+.layer_front {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: #3e8e41;
+  z-index: 4; /* Самый верхний слой */
+}
+/* Секция 2 */
+.section_2 {
+  background-color: #fff8e1;
+}
+
+.about_content {
+  text-align: justify;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Секция 3 */
+.section_3 {
+  background-color: #e8f5e9;
+}
+
+.skills_title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.skills_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills_list li {
+  background-color: #a5d6a7;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+
+.skills_list li:hover {
+  transform: translateY(-5px);
+}
+
+/* Секция 4 - Горизонтальный скролл */
+.section_4 {
+  background-color: #e3f2fd;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.games_container {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+}
+
+.games_content {
+  display: flex;
+  height: 100%;
+}
+
+.games_title {
+  font-size: 2.5rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  padding: 40px 20px 0;
+}
+
+.games_list {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px 40px;
+  height: calc(100% - 100px);
+  align-items: center;
+}
+
+.game_card {
+  width: 300px;
+  min-width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.game_card:hover {
+  transform: scale(1.05);
+}
+
+.game_title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.game_img {
+  width: 100%;
+  height: 150px;
+  background-color: #ddd;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.game_desc {
+  text-align: center;
+  font-size: 1rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Секция 5 */
+.section_5 {
+  background-color: #f3e5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px; /* Добавляем отступы */
+}
+
+.author_content {
+  display: flex;
+  /* flex-wrap: wrap;  Разрешаем перенос на мобильных */
+  justify-content: center; /* Центрируем содержимое */
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  gap: 10%; /* Заменяем margin-right у изображения */
+}
+
+.author_img {
+  width: 300px;
+  height: 355px;
+  background-color: #ddd;
+  border-radius: 10px;
+  flex-shrink: 0; /* Запрещаем сжатие */
+  object-fit: cover; /* Для реальных изображений */
+}
+
+.author_text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 500px; /* Ограничиваем ширину текста */
+  opacity: 0;
+}
+
+/* Секция 6 */
+.section_6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: #ffebee;
+}
+
+.end_text {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+/* Футер */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.footer a {
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #7cb342;
+}
+
+/* Анимация скролла */
+.scroll-hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #333;
+  font-size: 1rem;
+  z-index: 100;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
